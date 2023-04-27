@@ -1,7 +1,7 @@
 # CS230_project
 <p align="center">
     <h1 align="center"> L-TAGE Branch Predictor</h1>
-     L-TAGE is a PPM based branch predictor, a hybrid of the TAGE branch predictor and loop predictor developed by Andre Seznec and Pierre Michaud. It won the second Championship Branch Predction. Here, we present an implementation of L-TAGE and TAGE branch predictors using the Champsim simulator.
+     L-TAGE is a PPM based branch predictor, a hybrid of the TAGE branch predictor and loop predictor.Here, we present an implementation of L-TAGE and TAGE branch predictors using the Champsim simulator.
 </p>
 
 # Instructions to run
