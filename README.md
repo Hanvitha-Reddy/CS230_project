@@ -7,7 +7,7 @@
 # Instructions to run
 - Clone the repository
 ```
-$ git clone https://github.com/KanPard005/RISCY_V_TAGE.git
+$ git clone https://github.com/Hanvitha-Reddy/CS230_project
 ``` 
 - Download the traces from [here](https://drive.google.com/file/d/1qs8t8-YWc7lLoYbjbH_d3lf1xdoYBznf/view?usp=sharing) and extract them into a folder
 
