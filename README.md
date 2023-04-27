@@ -43,10 +43,3 @@ Below is the description of folders containing the results of the branch predict
 | [hashed_perceptron](hashed_perceptron)        | contains results associated with hashed perceptron predictor for each server trace file|
 | [results](results)                            | contains performance scores of each predictor                                         |
 
-
-# References
-
-- [LTAGE Branch Predictor](https://jilp.org/vol9/v9paper6.pdf)
-- [TAGE Branch Predictor](https://jilp.org/vol9/v9paper6.pdf)
-- [CBP2 Source Files](https://hpca23.cse.tamu.edu/taco/camino/cbp2/source.html)
-- [CBP4 TAGE-SC-L Branch Predictor](https://jilp.org/cbp2014/program.html)
