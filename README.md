@@ -33,7 +33,6 @@ Below is the description of files containing the implementation of the branch pr
 | File                                          | Description                                                                           |
 | ---                                           | ---                                                                                   |                         
 | [branch/loop_pred.h](branch/loop_pred.h)      | It implements loop predictor                                                          |
-| [branch/loop.h](branch/loop.h)                | It implements a variant of loop predictor component above                             |
 | [branch/ltage.bpred](branch/ltage.bpred)      | It implements the Champsim functions associated with branch prediction for LTAGE      |
 | [branch/Tage.bpred](branch/Tage.bpred)        | It implements the Champsim functions associated with branch prediction for TAGE       |
 | [branch/tage.h](branch/tage.h)                | It implements TAGE predictor                                                          |
