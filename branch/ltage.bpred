@@ -1,0 +1,35 @@
+#include <ooo_cpu.h>
+#include "tage.h"
+#include "loop_pred.h"
+
+Tage tage_predictor[NUM_CPUS]; 
+Loop_Predictor loop_predictor[NUM_CPUS];
+
+int loop_correct[NUM_CPUS] = {0};
+uint8_t tage_pred[NUM_CPUS], loop_pred[NUM_CPUS];
+
+void update_counter (uint8_t taken, uint32_t cpu) {
+    if (taken == loop_pred[cpu]) {
+        if (loop_correct[cpu] < 127) loop_correct[cpu]++;
+    }
+    else if (loop_correct[cpu] > -126) loop_correct[cpu]--;
+}
+
+void O3_CPU::initialize_branch_predictor() {
+    tage_predictor[cpu].init();
+    loop_predictor[cpu].init();
+}
+
+uint8_t O3_CPU::predict_branch(uint64_t ip) {
+    loop_pred[cpu] = loop_predictor[cpu].get_prediction(ip);
+    tage_pred[cpu] = tage_predictor[cpu].predict(ip);
+    if ((loop_predictor[cpu].is_valid) && (loop_correct[cpu] >= 0)) 
+        return loop_pred[cpu];
+    return tage_pred[cpu];
+}
+
+void O3_CPU::last_branch_result(uint64_t ip, uint8_t taken) {
+    tage_predictor[cpu].update(ip, taken);
+    loop_predictor[cpu].update(taken, tage_pred[cpu]);
+    if (loop_predictor[cpu].is_valid && (tage_pred[cpu] != loop_pred[cpu])) update_counter(taken, cpu);
+}
